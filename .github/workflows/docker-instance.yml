@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}-instance
+  IMAGE_NAME: ${{ github.repository }}/instance
 
 jobs:
   build-and-push-image:
