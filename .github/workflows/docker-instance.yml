@@ -11,6 +11,9 @@ env:
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./instance
     permissions:
       contents: read
       packages: write
@@ -31,7 +34,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: ./instance
+          context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
