@@ -4,11 +4,11 @@ ENV DEFAULT_WORKSPACE /workspace
 
 RUN apt-get update && apt-get install -y supervisor openjdk-17-jdk rsync
 
-COPY live.sh /app/live.sh
+COPY live.sh /app/overlay/live.sh
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-COPY download.sh /tmp/download.sh
-RUN /tmp/download.sh
+COPY download.sh /download.sh
+RUN /download.sh
 
 COPY start.sh /start.sh
 
