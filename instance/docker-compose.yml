@@ -1,9 +1,7 @@
 version: "2.1"
 services:
   code-server:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/azat-ismagilov/cloud-overlayer-instance:main
     container_name: "live-${ID}"
     environment:
       - PUID=1000
@@ -35,4 +33,3 @@ services:
 networks:
   web:
     external: true
-
