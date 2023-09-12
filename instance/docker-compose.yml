@@ -4,6 +4,8 @@ services:
     image: ghcr.io/azat-ismagilov/cloud-overlayer-instance:main
     container_name: "live-${ID}"
     environment:
+      - PUID=0
+      - GUID=0
       - TZ=Etc/UTC
       - PASSWORD=${PASSWORD}
       - SUDO_PASSWORD=${PASSWORD}
