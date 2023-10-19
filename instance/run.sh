@@ -1,3 +1,3 @@
 #!/bin/bash
 
-supervisorctl start overlayer
+supervisorctl start overlay
